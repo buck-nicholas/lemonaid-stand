@@ -10,11 +10,7 @@ namespace LemonaidStand
     {
         static void Main(string[] args)
         {
-            Recipe test = new Recipe();
-            test.DisplayRecipe();
-            Console.ReadLine();
-            Console.Clear();
-            test.AlterRecipe();
-            Console.ReadLine();        }
+            
+        }
     }
 }

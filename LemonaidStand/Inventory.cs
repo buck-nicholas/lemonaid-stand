@@ -13,5 +13,14 @@ namespace LemonaidStand
         private int iceAmount;
         private int cupAmount;
 
+        public Inventory()
+        {
+            lemonAmount = 0;
+            sugarAmount = 0;
+            iceAmount = 0;
+            cupAmount = 0;
+        }
+
+
     }
 }

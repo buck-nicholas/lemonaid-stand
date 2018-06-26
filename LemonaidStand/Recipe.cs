@@ -19,52 +19,7 @@ namespace LemonaidStand
             sugarPerPitcher = 4;
             icePerCup = 3;
             pricePerCup = .25;
-        }
-
-        //public int LemonsPerPitcher
-        //{
-        //    get
-        //    {
-        //        return lemonsPerPitcher;
-        //    }
-        //    set
-        //    {
-        //        lemonsPerPitcher = value;
-        //    }
-        //}
-        //public int SugarPerPitcher
-        //{
-        //    get
-        //    {
-        //        return sugarPerPitcher;
-        //    }
-        //    set
-        //    {
-        //        sugarPerPitcher = value;
-        //    }
-        //}
-        //public int IcePerCup
-        //{
-        //    get
-        //    {
-        //        return icePerCup;
-        //    }
-        //    set
-        //    {
-        //        icePerCup = value;
-        //    }
-        //}
-        //public double PricePerCup
-        //{
-        //    get
-        //    {
-        //        return pricePerCup;
-        //    }
-        //    set
-        //    {
-        //        pricePerCup = value;
-        //    }
-        //}
+        }   
 
         public void DisplayRecipe()
         {
