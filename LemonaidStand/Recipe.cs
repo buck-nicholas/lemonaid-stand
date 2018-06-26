@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonaidStand
 {
-    class Recipe
+    public class Recipe
     {
         private int lemonsPerPitcher;
         private int sugarPerPitcher;
@@ -42,7 +42,7 @@ namespace LemonaidStand
             Console.WriteLine("Price per Cup: ");
             pricePerCup =  Double.Parse(Console.ReadLine());
             Console.Clear();
-            Console.WriteLine("New Recipe: ");
+            Console.Write("New Recipe: ");
             DisplayRecipe();
         }
 

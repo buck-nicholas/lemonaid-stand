@@ -15,9 +15,12 @@ namespace LemonaidStand
         }
         public void GameMaster()
         {
+            
             player = new Player();
             Store store = new Store(player);
-            store.StoreMenu();
+            UserInterface mainMenu = new UserInterface(player, store);
+            mainMenu.MainMenu();
+            
         }
     }
 }

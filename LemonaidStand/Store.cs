@@ -56,7 +56,7 @@ namespace LemonaidStand
                     DisplayCart();
                     break;
                 case "6":
-                    return;
+                    
                 default:
                     break;
             }

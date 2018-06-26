@@ -12,6 +12,7 @@ namespace LemonaidStand
         public int sugarAmount;
         public int iceAmount;
         public int cupAmount;
+        
 
         public Inventory()
         {
@@ -19,6 +20,11 @@ namespace LemonaidStand
             sugarAmount = 0;
             iceAmount = 0;
             cupAmount = 0;
+        }
+
+        public void DisplayInventory()
+        {
+            Console.WriteLine("Player Inventory:\nLemons {0}\nSugar {1} cups\nIce {2} cubes\nCups {3}", lemonAmount, sugarAmount, iceAmount, cupAmount);
         }
 
 
