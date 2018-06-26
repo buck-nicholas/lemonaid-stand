@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace LemonaidStand
 {
-    class Inventory
+    public class Inventory
     {
-        private int lemonAmount;
-        private int sugarAmount;
-        private int iceAmount;
-        private int cupAmount;
+        public int lemonAmount;
+        public int sugarAmount;
+        public int iceAmount;
+        public int cupAmount;
 
         public Inventory()
         {

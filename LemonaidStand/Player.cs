@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace LemonaidStand
 {
-    class Player
+    public class Player
     {
-        private double netCash;
+        public double netCash;
         private double popularity;
+        public Inventory inventory = new Inventory();
+
+        public Player()
+        {
+            netCash = 20;
+        }
 
     }
 }

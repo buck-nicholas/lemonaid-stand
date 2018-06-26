@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonaidStand
 {
-    class Store
+    public class Store
     {
         private double[] lemonPrices = { .99, 2.47, 4.23};
         private double[] sugarPrices = { .63, 1.51, 3.46};
@@ -21,10 +21,12 @@ namespace LemonaidStand
         private List<double> cartItemPrice = new List<double>();
         private double totalPrice;
         private string userSelection;
-
-        public Store()
+        Player player;
+        
+        
+        public Store(Player player)
         {
-
+            this.player = player;
         }
 
         public void StoreMenu()
@@ -112,10 +114,47 @@ namespace LemonaidStand
                 Console.WriteLine("******* Total Price *******");
                 totalPrice = cartItemPrice.Sum();
                 Console.WriteLine("$" + totalPrice);
-                Console.Write("Press [Enter] to return back to the store...");
-                Console.ReadLine();
-                Console.Clear();
-                StoreMenu(); 
+                CompletePurchase();
+            }
+        }
+        public void CompletePurchase()
+        {
+            Console.WriteLine("Complete purchase? [yes / no]");
+            userSelection = Console.ReadLine();
+            if (userSelection.ToLower() == "yes")
+            {
+                if (totalPrice > player.netCash)
+                {
+                    Console.WriteLine("Transaction Canceled, Insufficient Funds.");
+                }
+                else
+                {
+                    int counter = 0;
+                    foreach (string item in cartItemName)
+                    {
+                        if (item.ToLower() == "lemons")
+                        {
+                            player.inventory.lemonAmount += cartItemSize[counter];
+                        }
+                        else if (item.ToLower() == "ice")
+                        {
+                            player.inventory.iceAmount += cartItemSize[counter];
+                        }
+                        else if (item.ToLower() == "sugar")
+                        {
+                            player.inventory.sugarAmount += cartItemSize[counter];
+                        }
+                        else if (item.ToLower() == "cups")
+                        {
+                            player.inventory.cupAmount += cartItemSize[counter];
+                        }
+                        counter++;
+                    }
+                }
+            }
+            else
+            {
+                StoreMenu();
             }
         }
         

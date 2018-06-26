@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace LemonaidStand
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Store store = new Store();
-            store.StoreMenu();
+            Game game = new Game();
+            game.GameMaster();
             Console.ReadLine();
         }
     }
