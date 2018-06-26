@@ -27,7 +27,7 @@ namespace LemonaidStand
             switch (userInput)
             {
                 case "1":
-                    store.StoreMenu();
+                    StoreMenu();
                     break;
                 case "2":
                     PlayerMenu();
@@ -36,7 +36,7 @@ namespace LemonaidStand
                     break;
                 default:
                     break;
-                    
+
             }
             Console.Clear();
             MainMenu();
@@ -89,6 +89,44 @@ namespace LemonaidStand
 
             }
             PlayerMenu();
+        }
+        public void StoreMenu()
+        {
+            Console.WriteLine("What would you like to buy?\n[1] Lemons\n[2] Sugar\n[3] Ice\n[4] Cups\n[5] View Cart\n[6] Check Out\n[7] Back to Main Menu");
+            Console.Write("Selection Number: ");
+            userInput = Console.ReadLine();
+            Console.Clear();
+            switch (userInput)
+            {
+                case "1":
+                    store.DisplayStorePrices("Lemons", store.lemonPrices, store.bulkLemon, "lemons");
+                    store.AddToCart("Lemons", store.lemonPrices, store.bulkLemon);
+                    break;
+                case "2":
+                    store.DisplayStorePrices("Sugar", store.sugarPrices, store.bulkSugar, "cups");
+                    store.AddToCart("Sugar", store.sugarPrices, store.bulkSugar);
+                    break;
+                case "3":
+                    store.DisplayStorePrices("Ice", store.icePrices, store.bulkIce, "cubes");
+                    store.AddToCart("Ice", store.icePrices, store.bulkIce);
+                    break;
+                case "4":
+                    store.DisplayStorePrices("Cups", store.cupPrices, store.bulkCup, "cups");
+                    store.AddToCart("Cups", store.cupPrices, store.bulkCup);
+                    break;
+                case "5":
+                    store.DisplayCart();
+                    Console.Clear();
+                    break;
+                case "6":
+                    store.CompletePurchase();
+                    break;
+                case "7":
+                    return;
+                default:
+                    break;
+            }
+            StoreMenu();
         }
     }
 }
