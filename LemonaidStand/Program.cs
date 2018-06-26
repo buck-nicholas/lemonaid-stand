@@ -10,7 +10,8 @@ namespace LemonaidStand
     {
         static void Main(string[] args)
         {
-            
+            Store store = new Store();
+            store.StoreMenu();
         }
     }
 }
