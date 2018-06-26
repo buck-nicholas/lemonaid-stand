@@ -8,5 +8,8 @@ namespace LemonaidStand
 {
     class Player
     {
+        private double netCash;
+        private double popularity;
+
     }
 }

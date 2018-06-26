@@ -8,5 +8,10 @@ namespace LemonaidStand
 {
     class Inventory
     {
+        private int lemonAmount;
+        private int sugarAmount;
+        private int iceAmount;
+        private int cupAmount;
+
     }
 }

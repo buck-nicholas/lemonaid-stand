@@ -8,5 +8,10 @@ namespace LemonaidStand
 {
     class Store
     {
+        private List<string> lemonPrices = new List<string>();
+        private List<string> sugarPrices = new List<string>();
+        private List<string> icePrices = new List<string>();
+        private List<string> cupPrices = new List<string>();
+
     }
 }
