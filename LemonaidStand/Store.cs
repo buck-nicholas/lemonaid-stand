@@ -16,6 +16,10 @@ namespace LemonaidStand
         private int[] bulkSugar = { 8, 20, 48 };
         private int[] bulkIce = { 100, 250, 500 };
         private int[] bulkCup = { 25, 50, 100 };
+        private List<string> cartItemName = new List<string>();
+        private List<int> cartItemSize = new List<int>();
+        private List<double> cartItemPrice = new List<double>();
+        private double totalPrice;
         private string userSelection;
 
         public Store()
@@ -25,29 +29,36 @@ namespace LemonaidStand
 
         public void StoreMenu()
         {
-            Console.WriteLine("What would you like to buy?\n[1] Lemons\n[2] Sugar\n[3] Ice\n[4] Cups\n[5] Exit Store");
+            Console.WriteLine("What would you like to buy?\n[1] Lemons\n[2] Sugar\n[3] Ice\n[4] Cups\n[5] View Cart\n[6] Exit Store");
             Console.Write("Selection Number: ");
             userSelection = Console.ReadLine();
             switch (userSelection)
             {
                 case "1":
                     DisplayStorePrices("Lemons", lemonPrices, bulkLemon, "lemons");
+                    AddToCart("Lemons", lemonPrices, bulkLemon);
                     break;
                 case "2":
                     DisplayStorePrices("Sugar", sugarPrices, bulkSugar, "cups");
+                    AddToCart("Sugar", sugarPrices, bulkSugar);
                     break;
                 case "3":
                     DisplayStorePrices("Ice", icePrices, bulkIce, "cubes");
+                    AddToCart("Ice", icePrices, bulkIce);
                     break;
                 case "4":
                     DisplayStorePrices("Cups", cupPrices, bulkCup, "cups");
+                    AddToCart("Cups", cupPrices, bulkCup);
                     break;
                 case "5":
+                    DisplayCart();
+                    break;
+                case "6":
                     return;
                 default:
                     break;
-
             }
+
 
         }
         public void DisplayStorePrices(string item, double[] prices, int[] itemSizes, string unitOfIssue)
@@ -58,6 +69,53 @@ namespace LemonaidStand
             {
                 Console.WriteLine("[" + (counter + 1) + "] " + size + " " + unitOfIssue + " for $" + prices[counter]);
                 counter++;
+            }
+        }
+        public void AddToCart(string item, double[] prices, int[] itemSizes)
+        {
+            Console.Write("Please enter your selection or type [exit] to return back to the store menu: ");
+            if (userSelection == "exit")
+            {
+                Console.Clear();
+                StoreMenu();
+            }
+            else
+            {
+                userSelection = Console.ReadLine();
+                int itemSelection = Int32.Parse(userSelection);
+                itemSelection -= 1;
+                cartItemName.Add(item);
+                cartItemPrice.Add(prices[itemSelection]);
+                cartItemSize.Add(itemSizes[itemSelection]);
+                Console.Clear();
+                StoreMenu();
+            }
+        }
+        public void DisplayCart()
+        {
+            if (cartItemName.Count == 0)
+            {
+                Console.WriteLine("Your cart is currently empty!");
+                Console.Write("Press [Enter] to return back to the store...");
+                Console.ReadLine();
+                Console.Clear();
+                StoreMenu();
+            }
+            else
+            {
+                int counter = 0;
+                foreach (string item in cartItemName)
+                {
+                    Console.WriteLine("Item: " + item + " Amount: " + cartItemSize[counter] + " $" + cartItemPrice[counter]);
+                    counter++;
+                }
+                Console.WriteLine("******* Total Price *******");
+                totalPrice = cartItemPrice.Sum();
+                Console.WriteLine("$" + totalPrice);
+                Console.Write("Press [Enter] to return back to the store...");
+                Console.ReadLine();
+                Console.Clear();
+                StoreMenu(); 
             }
         }
         
