@@ -13,7 +13,7 @@ namespace LemonaidStand
         public double willSpendMax;
         public double satisfactionLevel;
         private Random rand = new Random();
-        Weather weather;
+        private Weather weather;
 
         public Customer(Recipe recipe, Weather weather)
         {

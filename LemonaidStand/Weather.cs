@@ -78,5 +78,10 @@ namespace LemonaidStand
             }
             return weatherInfluence;
         }
+        public void DisplayWeather()
+        {
+            Console.WriteLine("Todays weather forecast is: {0} degrees and {1}", forecastedTemperature, forecastedWeatherType);
+
+        }
     }
 }

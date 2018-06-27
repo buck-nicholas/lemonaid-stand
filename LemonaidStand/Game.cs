@@ -16,9 +16,11 @@ namespace LemonaidStand
         public void GameMaster()
         {
             
-            player = new Player();
+            Player player = new Player();
             Store store = new Store(player);
-            UserInterface mainMenu = new UserInterface(player, store);
+            Weather weather = new Weather();
+            Day day = new Day(player);
+            UserInterface mainMenu = new UserInterface(player, store, weather);
             mainMenu.MainMenu();
             
         }

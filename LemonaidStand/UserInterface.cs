@@ -12,16 +12,18 @@ namespace LemonaidStand
         public string userInput;
         Player player;
         Store store;
+        Weather weather;
 
-        public UserInterface(Player player, Store store)
+        public UserInterface(Player player, Store store, Weather weather)
         {
             this.player = player;
             this.store = store;
+            this.weather = weather;
         }
 
         public void MainMenu()
         {
-            Console.WriteLine("Main Menu\n[1] Store\n[2] Player Menu");
+            Console.WriteLine("Main Menu\n[1] Store\n[2] Player Menu\n[3] Today's Forecast\n[5] Start Day");
             userInput = Console.ReadLine();
             Console.Clear();
             switch (userInput)
@@ -33,6 +35,9 @@ namespace LemonaidStand
                     PlayerMenu();
                     break;
                 case "3":
+                    weather.DisplayWeather();
+                    Console.WriteLine("Press [enter] to return to the Main Menu...");
+                    Console.ReadLine();
                     break;
                 default:
                     break;
