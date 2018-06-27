@@ -16,21 +16,22 @@ namespace LemonaidStand
         public Player player;
         private double moneyEarned;
 
-        public Day(Player player)
+        public Day(Player player, Weather weather)
         {
-            todaysWeather = new Weather();
+            todaysWeather = weather;
             this.player = player;
             baseCustomerFlowrate = 100;
             productSold = 0;
         }
         public void SetCustomerFlowRate()
         {
-            baseCustomerFlowrate += todaysWeather.weatherInfluence * 2;
+            customerflowrate = baseCustomerFlowrate + todaysWeather.weatherInfluence * 2;
         }
         public void dayLogic()
         {
+            SetCustomerFlowRate();
             MakePitcher();
-            while (player.inventory.iceAmount - player.recipe.icePerCup != 0 || player.inventory.cupAmount - 1 != 0 || cupCount != 0 || baseCustomerFlowrate != 0)
+            while ((player.inventory.iceAmount - player.recipe.icePerCup >= 0) && player.inventory.cupAmount - 1 >= 0 && cupCount > 0 && customerflowrate != 0)
             {
                 Customer customer = new Customer(player.recipe, todaysWeather);
                 if (customer.willBuy)
@@ -53,7 +54,7 @@ namespace LemonaidStand
                 {
                     MakePitcher();
                 }
-                baseCustomerFlowrate--;
+                customerflowrate--;
             }
             moneyEarned = productSold * player.recipe.pricePerCup;
             player.netCash += moneyEarned;

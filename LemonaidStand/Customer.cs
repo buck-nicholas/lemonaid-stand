@@ -12,18 +12,23 @@ namespace LemonaidStand
         public bool willBuy;
         public double willSpendMax;
         public double satisfactionLevel;
-        private Random rand = new Random();
+        private Random rand;
         private Weather weather;
+
 
         public Customer(Recipe recipe, Weather weather)
         {
+            rand = new Random();
+            DetermineMaxSpend();
             willBuy = DetermineWillBuy(recipe, weather);
             this.weather = weather;
         }
 
         public void DetermineMaxSpend()
         {
-            willSpendMax = rand.Next(15, 51) / 100;
+            double randomNumber = rand.Next(15, 51);
+            willSpendMax = (randomNumber / 100);
+            Console.WriteLine(willSpendMax);
         }
         public bool DetermineWillBuy(Recipe recipe, Weather weather)
         {

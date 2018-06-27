@@ -23,7 +23,7 @@ namespace LemonaidStand
 
         public void MainMenu()
         {
-            Console.WriteLine("Main Menu\n[1] Store\n[2] Player Menu\n[3] Today's Forecast\n[5] Start Day");
+            Console.WriteLine("Main Menu\n[1] Store\n[2] Player Menu\n[3] Today's Forecast\n[4] Start Day");
             userInput = Console.ReadLine();
             Console.Clear();
             switch (userInput)
@@ -39,9 +39,10 @@ namespace LemonaidStand
                     Console.WriteLine("Press [enter] to return to the Main Menu...");
                     Console.ReadLine();
                     break;
+                case "4":
+                    return;
                 default:
                     break;
-
             }
             Console.Clear();
             MainMenu();

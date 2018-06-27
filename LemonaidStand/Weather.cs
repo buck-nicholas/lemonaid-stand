@@ -20,13 +20,13 @@ namespace LemonaidStand
         {
             GetWeatherForecast();
             GetActualWeather();
+            weatherInfluence = CalculateWeatherInfluence();
         }
 
         public void GetWeatherForecast()
         {
             forecastedWeatherType = weatherTypes[rand.Next(3)];
             forecastedTemperature = rand.Next(65, 96);
-            weatherInfluence = CalculateWeatherInfluence();
         }
         public void GetActualWeather()
         {
@@ -68,11 +68,11 @@ namespace LemonaidStand
             {
                 weatherInfluence -= 5;
             }
-            if (actualTemperature < 80)
+            if (actualTemperature < 80 && actualTemperature > 70)
             {
                 weatherInfluence += 5;
             }
-            if (actualTemperature < 90)
+            if (actualTemperature < 90 && actualTemperature > 80)
             {
                 weatherInfluence += 5;
             }

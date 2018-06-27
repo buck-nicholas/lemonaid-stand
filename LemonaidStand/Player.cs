@@ -9,7 +9,7 @@ namespace LemonaidStand
     public class Player
     {
         public double netCash;
-        private double popularity;
+        //private double popularity;
         public Inventory inventory = new Inventory();
         public Recipe recipe = new Recipe();
 
