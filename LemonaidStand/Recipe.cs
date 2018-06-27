@@ -8,10 +8,10 @@ namespace LemonaidStand
 {
     public class Recipe
     {
-        private int lemonsPerPitcher;
-        private int sugarPerPitcher;
-        private int icePerCup;
-        private double pricePerCup;
+        public int lemonsPerPitcher;
+        public int sugarPerPitcher;
+        public int icePerCup;
+        public double pricePerCup;
 
         public Recipe()
         {
