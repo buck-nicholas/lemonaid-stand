@@ -22,47 +22,10 @@ namespace LemonaidStand
         public double totalPrice;
         public string userSelection;
         Player player;
-        
-        
         public Store(Player player)
         {
             this.player = player;
         }
-
-        //public void StoreMenu()
-        //{
-        //    Console.WriteLine("What would you like to buy?\n[1] Lemons\n[2] Sugar\n[3] Ice\n[4] Cups\n[5] View Cart\n[6] Exit Store");
-        //    Console.Write("Selection Number: ");
-        //    userSelection = Console.ReadLine();
-        //    switch (userSelection)
-        //    {
-        //        case "1":
-        //            DisplayStorePrices("Lemons", lemonPrices, bulkLemon, "lemons");
-        //            AddToCart("Lemons", lemonPrices, bulkLemon);
-        //            break;
-        //        case "2":
-        //            DisplayStorePrices("Sugar", sugarPrices, bulkSugar, "cups");
-        //            AddToCart("Sugar", sugarPrices, bulkSugar);
-        //            break;
-        //        case "3":
-        //            DisplayStorePrices("Ice", icePrices, bulkIce, "cubes");
-        //            AddToCart("Ice", icePrices, bulkIce);
-        //            break;
-        //        case "4":
-        //            DisplayStorePrices("Cups", cupPrices, bulkCup, "cups");
-        //            AddToCart("Cups", cupPrices, bulkCup);
-        //            break;
-        //        case "5":
-        //            DisplayCart();
-        //            break;
-        //        case "6":
-                    
-        //        default:
-        //            break;
-        //    }
-
-
-        //}
         public void DisplayStorePrices(string item, double[] prices, int[] itemSizes, string unitOfIssue)
         {
             int counter = 0;
@@ -79,7 +42,6 @@ namespace LemonaidStand
             if (userSelection == "exit")
             {
                 Console.Clear();
-                
             }
             else
             {
@@ -116,6 +78,32 @@ namespace LemonaidStand
                 Console.WriteLine("***************************");
                 Console.Write("Press [Enter] to continue...");
                 Console.ReadLine();
+            }
+        }
+        public void EditCart()
+        {
+            if (cartItemName.Count == 0)
+            {
+                Console.WriteLine("Your cart is currently empty!");
+                Console.Write("Press [Enter] to return back to the store...");
+                Console.ReadLine();
+                Console.Clear();
+            }
+            else
+            {
+                int counter = 0;
+                foreach (string item in cartItemName)
+                {
+                    Console.WriteLine("[" + (counter + 1) + "]" + " Item: " + item + " Amount: " + cartItemSize[counter] + " $" + cartItemPrice[counter]);
+                    counter++;
+                }
+                Console.Write("Please select the item you would like to remove: ");
+                userSelection = Console.ReadLine();
+                cartItemName.RemoveAt(Int32.Parse(userSelection) - 1);
+                cartItemPrice.RemoveAt(Int32.Parse(userSelection) - 1);
+                cartItemSize.RemoveAt(Int32.Parse(userSelection) - 1);
+                DisplayCart();
+                Console.Clear();
             }
         }
         public void CompletePurchase()

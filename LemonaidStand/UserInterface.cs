@@ -92,7 +92,7 @@ namespace LemonaidStand
         }
         public void StoreMenu()
         {
-            Console.WriteLine("What would you like to buy?\n[1] Lemons\n[2] Sugar\n[3] Ice\n[4] Cups\n[5] View Cart\n[6] Check Out\n[7] Back to Main Menu");
+            Console.WriteLine("What would you like to buy?\n[1] Lemons\n[2] Sugar\n[3] Ice\n[4] Cups\n[5] View Cart\n[6] Edit Cart\n[7] Check Out\n[8] Back to Main Menu");
             Console.Write("Selection Number: ");
             userInput = Console.ReadLine();
             Console.Clear();
@@ -119,9 +119,12 @@ namespace LemonaidStand
                     Console.Clear();
                     break;
                 case "6":
-                    store.CompletePurchase();
+                    store.EditCart();
                     break;
                 case "7":
+                    store.CompletePurchase();
+                    break;
+                case "8":
                     return;
                 default:
                     break;

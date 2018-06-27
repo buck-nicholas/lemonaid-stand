@@ -24,6 +24,9 @@ namespace LemonaidStand
         public void DisplayRecipe()
         {
             Console.WriteLine("Lemons per pitcher: {0}\nSugar per pitcher: {1} cups\nIce per cup: {2}\nPrice per cup: ${3}", lemonsPerPitcher,  sugarPerPitcher, icePerCup, pricePerCup);
+            Console.Write("Press [Enter] to continue...");
+            Console.ReadLine();
+            Console.Clear();
         }
         public void AlterRecipe()
         {
