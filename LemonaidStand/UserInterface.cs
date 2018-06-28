@@ -13,14 +13,12 @@ namespace LemonaidStand
         Player player;
         Store store;
         Weather weather;
-
         public UserInterface(Player player, Store store, Weather weather)
         {
             this.player = player;
             this.store = store;
             this.weather = weather;
         }
-
         public void MainMenu()
         {
             Console.WriteLine("Main Menu\n[1] Store\n[2] Player Menu\n[3] Today's Forecast\n[4] Start Day\n[5] Exit Game");

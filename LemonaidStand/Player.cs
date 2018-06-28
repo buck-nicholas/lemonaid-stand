@@ -24,7 +24,6 @@ namespace LemonaidStand
             totalEarnings = 0;
             successRate = 0;
         }
-
         public static void GetUserInput(string message)
         {
             Console.WriteLine(message);

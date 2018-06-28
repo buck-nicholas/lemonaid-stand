@@ -12,7 +12,6 @@ namespace LemonaidStand
         public int sugarPerPitcher;
         public int icePerCup;
         public double pricePerCup;
-
         public Recipe()
         {
             lemonsPerPitcher = 4;
@@ -20,7 +19,6 @@ namespace LemonaidStand
             icePerCup = 3;
             pricePerCup = .25;
         }   
-
         public void DisplayRecipe()
         {
             Console.WriteLine("Lemons per pitcher: {0}\nSugar per pitcher: {1} cups\nIce per cup: {2}\nPrice per cup: ${3}", lemonsPerPitcher,  sugarPerPitcher, icePerCup, pricePerCup);
@@ -48,6 +46,5 @@ namespace LemonaidStand
             Console.Write("New Recipe: ");
             DisplayRecipe();
         }
-
     }
 }

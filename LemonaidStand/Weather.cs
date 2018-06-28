@@ -15,7 +15,6 @@ namespace LemonaidStand
         public int actualTemperature;
         public int weatherInfluence;
         Random rand = new Random();
-
         public Weather()
         {
             GetWeatherForecast();
@@ -81,7 +80,6 @@ namespace LemonaidStand
         public void DisplayWeather()
         {
             Console.WriteLine("Todays weather forecast is: {0} degrees and {1}", forecastedTemperature, forecastedWeatherType);
-
         }
     }
 }

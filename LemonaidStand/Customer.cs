@@ -12,8 +12,8 @@ namespace LemonaidStand
         public bool willBuy;
         public double willSpendMax;
         public double satisfactionLevel;
-        private static Random randomInt = new Random();
-        private static object syncLock = new object();
+        private static readonly Random randomInt = new Random();
+        private static readonly object syncLock = new object();
         private Weather weather;
 
 

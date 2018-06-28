@@ -12,8 +12,6 @@ namespace LemonaidStand
         public int sugarAmount;
         public int iceAmount;
         public int cupAmount;
-        
-
         public Inventory()
         {
             lemonAmount = 10;
@@ -21,7 +19,6 @@ namespace LemonaidStand
             iceAmount = 10;
             cupAmount = 10;
         }
-
         public void DisplayInventory()
         {
             Console.WriteLine("Player Inventory:\nLemons {0}\nSugar {1} cups\nIce {2} cubes\nCups {3}", lemonAmount, sugarAmount, iceAmount, cupAmount);
@@ -34,6 +31,5 @@ namespace LemonaidStand
                 Console.WriteLine("Your ice has melted...");
             }
         }
-
     }
 }

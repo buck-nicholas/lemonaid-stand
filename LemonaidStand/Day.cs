@@ -16,7 +16,6 @@ namespace LemonaidStand
         public Player player;
         private double moneyEarned;
         private Random randomNumber = new Random();
-
         public Day(Player player, Weather weather)
         {
             todaysWeather = weather;
@@ -29,7 +28,7 @@ namespace LemonaidStand
             customerflowrate = baseCustomerFlowrate + todaysWeather.weatherInfluence * 2;
             player.totalCustomers += customerflowrate;
         }
-        public void dayLogic()
+        public void DayLogic()
         {
             SetCustomerFlowRate();
             MakePitcher();
@@ -59,7 +58,7 @@ namespace LemonaidStand
             Console.ReadLine();
             Console.Clear();
         }
-        public void dayResults()
+        public void DayResults()
         {
             Console.WriteLine("You sold {0} cups to {1} customers and made ${2} today.", productSold, customerflowrate, moneyEarned);
             player.inventory.CalculateInventoryLoss();

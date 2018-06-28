@@ -33,8 +33,8 @@ namespace LemonaidStand
                 Console.WriteLine("Day: " + (dayCount + 1));
                 weather.DisplayWeather();
                 mainMenu.MainMenu();
-                day.dayLogic();
-                day.dayResults();
+                day.DayLogic();
+                day.DayResults();
                 day = new Day(player, weather);
                 weather = new Weather();
                 dayCount++;
