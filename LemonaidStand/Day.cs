@@ -27,6 +27,7 @@ namespace LemonaidStand
         public void SetCustomerFlowRate()
         {
             customerflowrate = baseCustomerFlowrate + todaysWeather.weatherInfluence * 2;
+            player.totalCustomers += customerflowrate;
         }
         public void dayLogic()
         {
@@ -51,6 +52,8 @@ namespace LemonaidStand
                 customerCountDown--;
             }
             moneyEarned = productSold * player.recipe.pricePerCup;
+            player.totalSold += productSold;
+            player.totalEarnings += moneyEarned;
             player.netCash += moneyEarned;
             Console.Write("Press Enter to Continue to Results...");
             Console.ReadLine();

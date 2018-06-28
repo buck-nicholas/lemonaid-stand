@@ -9,19 +9,29 @@ namespace LemonaidStand
     public class Player
     {
         public double netCash;
-        //private double popularity;
         public Inventory inventory = new Inventory();
         public Recipe recipe = new Recipe();
+        public double totalSold;
+        public double totalCustomers;
+        public double totalEarnings;
+        public double successRate;
 
         public Player()
         {
             netCash = 20;
+            totalCustomers = 0;
+            totalSold = 0;
+            totalEarnings = 0;
         }
 
         public static void GetUserInput(string message)
         {
             Console.WriteLine(message);
             string userInput = Console.ReadLine();
+        }
+        public void CalculateSuccessRate()
+        {
+            successRate = totalSold / totalCustomers;
         }
 
     }

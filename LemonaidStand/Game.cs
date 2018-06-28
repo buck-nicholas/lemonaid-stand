@@ -18,6 +18,7 @@ namespace LemonaidStand
         public Game()
         {
             GameMaster();
+            GameEndResults();
         }
         public void GameMaster()
         {
@@ -39,6 +40,10 @@ namespace LemonaidStand
                 weather = new Weather();
                 dayCount++;
             }
+        }
+        private void GameEndResults()
+        {
+            Console.WriteLine("Game End!\nYou ended with a total networth of: ${0}\nYou sold a total of {1} cups to {2} potential customers.\nSuccessRate: {3}\n Total Earnings: ${4}", player.netCash, player.totalSold, player.totalCustomers, (player.totalSold / player.totalCustomers), player.totalEarnings);
         }
     }
 }
