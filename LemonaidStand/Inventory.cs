@@ -26,7 +26,11 @@ namespace LemonaidStand
         {
             Console.WriteLine("Player Inventory:\nLemons {0}\nSugar {1} cups\nIce {2} cubes\nCups {3}", lemonAmount, sugarAmount, iceAmount, cupAmount);
         }
-
+        public void CalculateInventoryLoss()
+        {
+            iceAmount = 0;
+            Console.WriteLine("Your ice has melted...");
+        }
 
     }
 }

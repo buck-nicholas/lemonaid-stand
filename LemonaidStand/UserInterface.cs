@@ -50,7 +50,7 @@ namespace LemonaidStand
         }
         public void PlayerMenu()
         {
-            Console.WriteLine("Player Menu\n[1] Total Cash\n[2] Inventory\n[3] Recipe Menu\n[4] Popularity\n[5] Back to Main Menu");
+            Console.WriteLine("Player Menu\n[1] Total Cash\n[2] Inventory\n[3] Recipe Menu\n[4] Back to Main Menu");
             userInput = Console.ReadLine();
             Console.Clear();
             switch (userInput)
@@ -68,9 +68,6 @@ namespace LemonaidStand
                     RecipeMenu();
                     break;
                 case "4":
-                    // player popularity
-                    break;
-                case "5":
                     break;
                 default:
                     DisplayImproperSelectionPrompt(userInput);

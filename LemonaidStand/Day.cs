@@ -59,6 +59,7 @@ namespace LemonaidStand
         public void dayResults()
         {
             Console.WriteLine("You sold {0} cups today to {1} customers and made ${2} today.", productSold, customerflowrate, moneyEarned);
+            player.inventory.CalculateInventoryLoss();
             Console.Write("Press Enter to Continue to the Main Menu...");
             Console.ReadLine();
             Console.Clear();

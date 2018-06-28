@@ -73,12 +73,16 @@ namespace LemonaidStand
                     counter++;
                 }
                 Console.WriteLine("******* Total Price *******");
-                totalPrice = cartItemPrice.Sum();
-                Console.WriteLine("$" + totalPrice);
+                Console.WriteLine("$" + CalculateCartTotal());
                 Console.WriteLine("***************************");
                 Console.Write("Press [Enter] to continue...");
                 Console.ReadLine();
             }
+        }
+        private double CalculateCartTotal()
+        {
+            totalPrice = cartItemPrice.Sum();
+            return totalPrice;
         }
         public void EditCart()
         {
