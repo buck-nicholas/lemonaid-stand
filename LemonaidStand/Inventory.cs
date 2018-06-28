@@ -28,8 +28,11 @@ namespace LemonaidStand
         }
         public void CalculateInventoryLoss()
         {
-            iceAmount = 0;
-            Console.WriteLine("Your ice has melted...");
+            if (iceAmount > 0)
+            {
+                iceAmount = 0;
+                Console.WriteLine("Your ice has melted...");
+            }
         }
 
     }
