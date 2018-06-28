@@ -23,7 +23,7 @@ namespace LemonaidStand
 
         public void MainMenu()
         {
-            Console.WriteLine("Main Menu\n[1] Store\n[2] Player Menu\n[3] Today's Forecast\n[4] Start Day");
+            Console.WriteLine("Main Menu\n[1] Store\n[2] Player Menu\n[3] Today's Forecast\n[4] Start Day\n[5] Exit Game");
             userInput = Console.ReadLine();
             Console.Clear();
             switch (userInput)
@@ -41,6 +41,9 @@ namespace LemonaidStand
                     break;
                 case "4":
                     return;
+                case "5":
+                    ExitGamePrompt();
+                    break;
                 default:
                     DisplayImproperSelectionPrompt(userInput);
                     break;
@@ -50,7 +53,7 @@ namespace LemonaidStand
         }
         public void PlayerMenu()
         {
-            Console.WriteLine("Player Menu\n[1] Total Cash\n[2] Inventory\n[3] Recipe Menu\n[4] Back to Main Menu");
+            Console.WriteLine("Player Menu\n[1] Total Cash\n[2] Inventory\n[3] Recipe Menu\n[4] Player Stats\n[5] Back to Main Menu");
             userInput = Console.ReadLine();
             Console.Clear();
             switch (userInput)
@@ -68,11 +71,18 @@ namespace LemonaidStand
                     RecipeMenu();
                     break;
                 case "4":
+                    player.DisplayPlayerStats();
+                    Console.WriteLine("Press [enter] to return to the Main Menu...");
+                    Console.ReadLine();
                     break;
+                case "5":
+                    return;
                 default:
                     DisplayImproperSelectionPrompt(userInput);
                     break;
             }
+            Console.Clear();
+            MainMenu();
         }
         public void RecipeMenu()
         {
@@ -144,6 +154,21 @@ namespace LemonaidStand
             Console.Write("Please enter a valid selection...");
             Console.ReadLine();
             Console.Clear();
+        }
+        public void ExitGamePrompt()
+        {
+            Console.Clear();
+            Console.WriteLine("Are you sure you want to exit the game? [yes / no]");
+            Console.Write("Selection: ");
+            userInput = Console.ReadLine();
+            if (userInput.ToLower() == "yes")
+            {
+                Environment.Exit(0);
+            }
+            if (userInput.ToLower() != "yes" && userInput.ToLower() != "no")
+            {
+                DisplayImproperSelectionPrompt(userInput);
+            }
         }
     }
 }

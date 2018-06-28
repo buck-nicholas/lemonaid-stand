@@ -22,6 +22,7 @@ namespace LemonaidStand
             totalCustomers = 0;
             totalSold = 0;
             totalEarnings = 0;
+            successRate = 0;
         }
 
         public static void GetUserInput(string message)
@@ -32,6 +33,10 @@ namespace LemonaidStand
         public void CalculateSuccessRate()
         {
             successRate = totalSold / totalCustomers;
+        }
+        public void DisplayPlayerStats()
+        {
+            Console.WriteLine("Total networth of: ${0}\nYou sold a total of {1} cups to {2} potential customers.\nSuccessRate: {3}\nTotal Earnings: ${4}", netCash, totalSold, totalCustomers, (totalSold / totalCustomers), totalEarnings);
         }
 
     }

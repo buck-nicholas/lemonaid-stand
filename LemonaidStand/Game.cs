@@ -18,15 +18,14 @@ namespace LemonaidStand
         public Game()
         {
             GameMaster();
-            GameEndResults();
         }
         public void GameMaster()
         {
             player = new Player();
             store = new Store(player);
             gameLength = 7;
-            weather = new Weather(); // Day 1 Weather
-            day = new Day(player, weather); // Day 1
+            weather = new Weather(); 
+            day = new Day(player, weather);
             dayCount = 0;
             mainMenu = new UserInterface(player, store, weather);
             while (dayCount < gameLength)
@@ -40,10 +39,28 @@ namespace LemonaidStand
                 weather = new Weather();
                 dayCount++;
             }
+            GameEndResults();
+            AskPlayAgain();
         }
         private void GameEndResults()
         {
-            Console.WriteLine("Game End!\nYou ended with a total networth of: ${0}\nYou sold a total of {1} cups to {2} potential customers.\nSuccessRate: {3}\n Total Earnings: ${4}", player.netCash, player.totalSold, player.totalCustomers, (player.totalSold / player.totalCustomers), player.totalEarnings);
+            Console.WriteLine("Game End!\nYou ended with a total networth of: ${0}\nYou sold a total of {1} cups to {2} potential customers.\nSuccessRate: {3}\nTotal Earnings: ${4}", player.netCash, player.totalSold, player.totalCustomers, (player.totalSold / player.totalCustomers), player.totalEarnings);
+        }
+        private void AskPlayAgain()
+        {
+            Console.WriteLine("Play Again? [yes / no]");
+            string userSelection = Console.ReadLine();
+            if (userSelection.ToLower() == "yes")
+            {
+                Console.Clear();
+                GameMaster();
+            }
+            else
+            {
+                mainMenu.ExitGamePrompt();
+                Console.Clear();
+                AskPlayAgain();
+            }
         }
     }
 }
