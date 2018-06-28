@@ -16,10 +16,10 @@ namespace LemonaidStand
 
         public Inventory()
         {
-            lemonAmount = 0;
-            sugarAmount = 0;
-            iceAmount = 0;
-            cupAmount = 0;
+            lemonAmount = 10;
+            sugarAmount = 10;
+            iceAmount = 10;
+            cupAmount = 10;
         }
 
         public void DisplayInventory()

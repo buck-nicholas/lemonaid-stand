@@ -99,9 +99,21 @@ namespace LemonaidStand
                 }
                 Console.Write("Please select the item you would like to remove: ");
                 userSelection = Console.ReadLine();
-                cartItemName.RemoveAt(Int32.Parse(userSelection) - 1);
-                cartItemPrice.RemoveAt(Int32.Parse(userSelection) - 1);
-                cartItemSize.RemoveAt(Int32.Parse(userSelection) - 1);
+                try
+                {
+                    cartItemName.RemoveAt(Int32.Parse(userSelection) - 1);
+                    cartItemPrice.RemoveAt(Int32.Parse(userSelection) - 1);
+                    cartItemSize.RemoveAt(Int32.Parse(userSelection) - 1);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("\"{0}\" is not a valid selection", userSelection);
+                    Console.Write("Please enter a valid selection...");
+                    Console.ReadLine();
+                    Console.Clear();
+                    EditCart();
+                }
+                
                 DisplayCart();
                 Console.Clear();
             }

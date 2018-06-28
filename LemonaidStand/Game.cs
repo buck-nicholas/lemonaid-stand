@@ -31,8 +31,10 @@ namespace LemonaidStand
             while (dayCount < gameLength)
             {
                 Console.WriteLine("Day: " + (dayCount + 1));
+                weather.DisplayWeather();
                 mainMenu.MainMenu();
                 day.dayLogic();
+                day.dayResults();
                 day = new Day(player, weather);
                 weather = new Weather();
                 dayCount++;

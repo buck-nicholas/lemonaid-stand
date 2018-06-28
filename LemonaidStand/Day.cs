@@ -15,6 +15,7 @@ namespace LemonaidStand
         private int cupCount;
         public Player player;
         private double moneyEarned;
+        private Random randomNumber = new Random();
 
         public Day(Player player, Weather weather)
         {
@@ -31,7 +32,8 @@ namespace LemonaidStand
         {
             SetCustomerFlowRate();
             MakePitcher();
-            while ((player.inventory.iceAmount - player.recipe.icePerCup >= 0) && player.inventory.cupAmount - 1 >= 0 && cupCount > 0 && customerflowrate != 0)
+            int customerCountDown = customerflowrate;
+            while ((player.inventory.iceAmount - player.recipe.icePerCup >= 0) && player.inventory.cupAmount - 1 >= 0 && cupCount > 0 && customerCountDown != 0)
             {
                 Customer customer = new Customer(player.recipe, todaysWeather);
                 if (customer.willBuy)
@@ -42,22 +44,24 @@ namespace LemonaidStand
                     player.inventory.cupAmount -= 1;
                     Console.WriteLine("+$" + player.recipe.pricePerCup + "Sale Made!");
                 }
-                if (customer.satisfactionLevel < 30)
-                {
-                    Console.WriteLine("Customer says: YUCK!");
-                }
-                if (customer.satisfactionLevel > 70)
-                {
-                    Console.WriteLine("Customer says: Yum!");
-                }
                 if (cupCount == 0)
                 {
                     MakePitcher();
                 }
-                customerflowrate--;
+                customerCountDown--;
             }
             moneyEarned = productSold * player.recipe.pricePerCup;
             player.netCash += moneyEarned;
+            Console.Write("Press Enter to Continue to Results...");
+            Console.ReadLine();
+            Console.Clear();
+        }
+        public void dayResults()
+        {
+            Console.WriteLine("You sold {0} cups today to {1} customers and made ${2} today.", productSold, customerflowrate, moneyEarned);
+            Console.Write("Press Enter to Continue to the Main Menu...");
+            Console.ReadLine();
+            Console.Clear();
         }
         public int MakePitcher()
         {

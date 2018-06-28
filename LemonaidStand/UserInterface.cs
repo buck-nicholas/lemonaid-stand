@@ -42,6 +42,7 @@ namespace LemonaidStand
                 case "4":
                     return;
                 default:
+                    DisplayImproperSelectionPrompt(userInput);
                     break;
             }
             Console.Clear();
@@ -72,6 +73,7 @@ namespace LemonaidStand
                 case "5":
                     break;
                 default:
+                    DisplayImproperSelectionPrompt(userInput);
                     break;
             }
         }
@@ -91,6 +93,7 @@ namespace LemonaidStand
                 case "3":
                     break;
                 default:
+                    DisplayImproperSelectionPrompt(userInput);
                     break;
 
             }
@@ -133,9 +136,17 @@ namespace LemonaidStand
                 case "8":
                     return;
                 default:
+                    DisplayImproperSelectionPrompt(userInput);
                     break;
             }
             StoreMenu();
+        }
+        private static void DisplayImproperSelectionPrompt(string userInput)
+        {
+            Console.WriteLine("\"{0}\" is not a valid selection", userInput);
+            Console.Write("Please enter a valid selection...");
+            Console.ReadLine();
+            Console.Clear();
         }
     }
 }

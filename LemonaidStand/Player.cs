@@ -18,5 +18,11 @@ namespace LemonaidStand
             netCash = 20;
         }
 
+        public static void GetUserInput(string message)
+        {
+            Console.WriteLine(message);
+            string userInput = Console.ReadLine();
+        }
+
     }
 }
