@@ -8,11 +8,11 @@ namespace LemonaidStand
 {
     class Weather
     {
-        public List<string> weatherTypes = new List<string>() { "Sunny", "Cloudy", "Rain"};
-        public string forecastedWeatherType;
-        public string actualWeatherType;
-        public int forecastedTemperature;
-        public int actualTemperature;
+        private List<string> weatherTypes = new List<string>() { "Sunny", "Cloudy", "Rain"};
+        private string forecastedWeatherType;
+        private string actualWeatherType;
+        private int forecastedTemperature;
+        private int actualTemperature;
         public int weatherInfluence;
         Random rand = new Random();
         public Weather()

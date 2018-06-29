@@ -8,12 +8,12 @@ namespace LemonaidStand
 {
     class Day
     {
-        public int productSold;
+        private int productSold;
         private int customerflowrate;
         private int baseCustomerFlowrate;
         private Weather todaysWeather;
         private int cupCount;
-        public Player player;
+        private Player player;
         private double moneyEarned;
         private Random randomNumber = new Random();
         public Day(Player player, Weather weather)

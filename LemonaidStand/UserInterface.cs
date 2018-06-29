@@ -9,7 +9,7 @@ namespace LemonaidStand
     class UserInterface
     {
         // member var
-        public string userInput;
+        private string userInput;
         Player player;
         Store store;
         Weather weather;
@@ -49,7 +49,7 @@ namespace LemonaidStand
             Console.Clear();
             MainMenu();
         }
-        public void PlayerMenu()
+        private void PlayerMenu()
         {
             Console.WriteLine("Player Menu\n[1] Total Cash\n[2] Inventory\n[3] Recipe Menu\n[4] Player Stats\n[5] Back to Main Menu");
             userInput = Console.ReadLine();
@@ -80,9 +80,8 @@ namespace LemonaidStand
                     break;
             }
             Console.Clear();
-            //MainMenu();
         }
-        public void RecipeMenu()
+        private void RecipeMenu()
         {
             Console.WriteLine("Recipe Menu\n[1] Display Recipe\n[2] Alter Recipe\n[3] Return to Player Menu");
             userInput = Console.ReadLine();
@@ -104,7 +103,7 @@ namespace LemonaidStand
             }
             PlayerMenu();
         }
-        public void StoreMenu()
+        private void StoreMenu()
         {
             Console.WriteLine("What would you like to buy?\n[1] Lemons\n[2] Sugar\n[3] Ice\n[4] Cups\n[5] View Cart\n[6] Edit Cart\n[7] Check Out\n[8] Back to Main Menu");
             Console.Write("Selection Number: ");

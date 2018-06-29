@@ -10,8 +10,8 @@ namespace LemonaidStand
     class Customer
     {
         public bool willBuy;
-        public double willSpendMax;
-        public double satisfactionLevel;
+        private double willSpendMax;
+        private double satisfactionLevel; // unused
         private static readonly Random randomInt = new Random();
         private static readonly object syncLock = new object();
         private Weather weather;

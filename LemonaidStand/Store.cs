@@ -16,11 +16,11 @@ namespace LemonaidStand
         public int[] bulkSugar = { 8, 20, 48 };
         public int[] bulkIce = { 100, 250, 500 };
         public int[] bulkCup = { 25, 50, 100 };
-        public List<string> cartItemName = new List<string>();
-        public List<int> cartItemSize = new List<int>();
-        public List<double> cartItemPrice = new List<double>();
-        public double totalPrice;
-        public string userSelection;
+        private List<string> cartItemName = new List<string>();
+        private List<int> cartItemSize = new List<int>();
+        private List<double> cartItemPrice = new List<double>();
+        private double totalPrice;
+        private string userSelection;
         Player player;
         public Store(Player player)
         {

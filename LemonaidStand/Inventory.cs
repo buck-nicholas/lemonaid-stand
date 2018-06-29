@@ -14,10 +14,10 @@ namespace LemonaidStand
         public int cupAmount;
         public Inventory()
         {
-            lemonAmount = 10;
-            sugarAmount = 10;
-            iceAmount = 10;
-            cupAmount = 10;
+            lemonAmount = 0;
+            sugarAmount = 0;
+            iceAmount = 0;
+            cupAmount = 0;
         }
         public void DisplayInventory()
         {
