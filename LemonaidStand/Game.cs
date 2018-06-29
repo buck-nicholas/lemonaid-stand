@@ -17,17 +17,17 @@ namespace LemonaidStand
         private int gameLength;
         public Game()
         {
-            GameMaster();
-        }
-        public void GameMaster()
-        {
+            //  GameMaster();
             player = new Player();
             store = new Store(player);
             gameLength = 7;
-            weather = new Weather(); 
-            day = new Day(player, weather);
+            weather = new Weather();
+            day = new Day(player, weather); // Day One Creation
             dayCount = 0;
             mainMenu = new UserInterface(player, store, weather);
+        }
+        public void GameMaster()
+        {
             while (dayCount < gameLength)
             {
                 Console.WriteLine("Day: " + (dayCount + 1));

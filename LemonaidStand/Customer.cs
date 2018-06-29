@@ -19,7 +19,6 @@ namespace LemonaidStand
 
         public Customer(Recipe recipe, Weather weather)
         {
-            
             DetermineMaxSpend();
             willBuy = DetermineWillBuy(recipe, weather);
             this.weather = weather;
