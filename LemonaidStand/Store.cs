@@ -158,6 +158,9 @@ namespace LemonaidStand
                         counter++;
                     }
                     player.netCash -= totalPrice;
+                    cartItemName.Clear();
+                    cartItemPrice.Clear();
+                    cartItemSize.Clear();
                 }
             }
             Console.Clear();

@@ -42,7 +42,7 @@ namespace LemonaidStand
             if (recipe.pricePerCup <= willSpendMax)
             {
                 int buyChance = RandomNumberGenerater(0, 101);
-                if (buyChance + weather.weatherInfluence >= 61)
+                if (buyChance + weather.weatherInfluence >= 71)
                 {
                     willBuy = true;
                 }

@@ -80,7 +80,7 @@ namespace LemonaidStand
                     break;
             }
             Console.Clear();
-            MainMenu();
+            //MainMenu();
         }
         public void RecipeMenu()
         {
